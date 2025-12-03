@@ -1,0 +1,343 @@
+@import 'font'
+
+// Color Variables
+$color-bg: #F5F1EB
+$color-text: #1a1a1a
+$color-accent: #D32F2F
+$color-gray: #666666
+$color-light-gray: #E0E0E0
+
+// Spacing
+$spacing-xs: 0.5rem
+$spacing-sm: 1rem
+$spacing-md: 1.5rem
+$spacing-lg: 2rem
+$spacing-xl: 3rem
+$spacing-2xl: 4rem
+$spacing-3xl: 6rem
+
+// Layout
+$max-width: 1200px
+$nav-height: 60px
+
+// Reset & Base Styles
+*, *::before, *::after
+    box-sizing: border-box
+    margin: 0
+    padding: 0
+
+html
+    font-size: 16px
+    scroll-behavior: smooth
+
+body
+    +body-style
+    background-color: $color-bg
+    color: $color-text
+    padding-top: $nav-height
+    min-height: 100vh
+
+a
+    color: inherit
+    text-decoration: none
+    transition: color 0.3s ease
+
+img
+    max-width: 100%
+    height: auto
+    display: block
+
+// Typography
+h1, h2, h3, h4, h5, h6
+    +heading-style
+
+h1
+    font-size: $font-size-6xl
+    margin-bottom: $spacing-md
+
+h2
+    font-size: $font-size-5xl
+    margin-bottom: $spacing-lg
+
+h3
+    font-size: $font-size-3xl
+    margin-bottom: $spacing-md
+
+p
+    margin-bottom: $spacing-md
+    color: $color-gray
+
+// Hero Section
+.hero
+    max-width: $max-width
+    margin: 0 auto
+    padding: $spacing-3xl $spacing-lg
+    
+    &__content
+        max-width: 800px
+    
+    &__title
+        font-size: $font-size-6xl
+        color: $color-accent
+        margin-bottom: $spacing-md
+        font-style: italic
+    
+    &__description
+        font-size: $font-size-lg
+        color: $color-text
+        margin-bottom: $spacing-lg
+        line-height: $line-height-relaxed
+    
+    &__contact
+        font-family: $font-body
+        font-size: $font-size-base
+        font-weight: $font-bold
+        color: $color-accent
+        text-transform: uppercase
+        letter-spacing: 0.5px
+        
+        &:hover
+            text-decoration: underline
+
+// Main Content
+.main-content
+    max-width: $max-width
+    margin: 0 auto
+    padding: 0 $spacing-lg
+
+// Section Styles
+.section-header
+    margin-bottom: $spacing-3xl
+    
+.section-title
+    font-size: $font-size-5xl
+    color: $color-accent
+    margin-bottom: $spacing-md
+    
+.section-description
+    font-size: $font-size-base
+    color: $color-text
+    max-width: 700px
+    line-height: $line-height-relaxed
+
+// Works Section
+.works-section
+    padding: $spacing-3xl 0
+
+.project-grid
+    display: grid
+    grid-template-columns: 1fr
+    gap: $spacing-3xl
+
+// Project Card
+.project-card
+    display: grid
+    gap: $spacing-lg
+    
+    &__link
+        display: block
+        position: relative
+        overflow: hidden
+        cursor: pointer
+    
+    &__image
+        position: relative
+        width: 100%
+        padding-bottom: 75%
+        background-color: $color-light-gray
+        overflow: hidden
+        
+        img
+            position: absolute
+            top: 0
+            left: 0
+            width: 100%
+            height: 100%
+            object-fit: cover
+            transition: transform 0.4s ease
+    
+    &__overlay
+        position: absolute
+        top: 0
+        left: 0
+        right: 0
+        bottom: 0
+        background-color: rgba($color-accent, 0.9)
+        display: flex
+        align-items: center
+        justify-content: center
+        opacity: 0
+        transition: opacity 0.3s ease
+    
+    &__cta
+        font-family: $font-body
+        font-size: $font-size-xl
+        font-weight: $font-bold
+        color: white
+        text-transform: uppercase
+        letter-spacing: 1px
+    
+    &__link:hover
+        .project-card__image img
+            transform: scale(1.05)
+        
+        .project-card__overlay
+            opacity: 1
+    
+    &__content
+        display: flex
+        flex-direction: column
+        gap: $spacing-sm
+    
+    &__label
+        font-family: $font-body
+        font-size: $font-size-sm
+        font-weight: $font-regular
+        color: $color-gray
+        text-transform: uppercase
+        letter-spacing: 1px
+        margin-bottom: 0
+    
+    &__title
+        font-size: $font-size-3xl
+        color: $color-text
+        margin-bottom: $spacing-sm
+        
+        a
+            transition: color 0.3s ease
+            
+            &:hover
+                color: $color-accent
+    
+    &__description
+        font-size: $font-size-base
+        color: $color-gray
+        line-height: $line-height-relaxed
+
+// About Section
+.about-section
+    padding: $spacing-3xl 0
+    
+.about-content
+    display: grid
+    gap: $spacing-2xl
+    
+    &__text
+        p
+            font-size: $font-size-base
+            color: $color-text
+            line-height: $line-height-relaxed
+            margin-bottom: $spacing-lg
+    
+    &__cta
+        margin-top: $spacing-xl
+        
+    .cta-text
+        font-family: $font-body
+        font-size: $font-size-sm
+        font-weight: $font-bold
+        color: $color-accent
+        text-transform: uppercase
+        letter-spacing: 1px
+        margin-bottom: $spacing-xs
+    
+    .cta-link
+        font-family: $font-body
+        font-size: $font-size-xl
+        font-weight: $font-regular
+        color: $color-accent
+        
+        &:hover
+            text-decoration: underline
+    
+    &__skills
+        
+    .skills-title
+        font-family: $font-body
+        font-size: $font-size-sm
+        font-weight: $font-bold
+        color: $color-text
+        text-transform: uppercase
+        letter-spacing: 1px
+        margin-bottom: $spacing-lg
+    
+    .skills-group
+        margin-bottom: $spacing-lg
+    
+    .skills-subtitle
+        font-family: $font-body
+        font-size: $font-size-base
+        font-weight: $font-semibold
+        color: $color-text
+        margin-bottom: $spacing-sm
+    
+    .skills-list
+        list-style: none
+        padding: 0
+        
+        li
+            font-size: $font-size-base
+            color: $color-gray
+            margin-bottom: $spacing-xs
+            line-height: $line-height-normal
+    
+    &__image
+        width: 100%
+        padding-bottom: 100%
+        background-color: $color-light-gray
+        position: relative
+        
+        img
+            position: absolute
+            top: 0
+            left: 0
+            width: 100%
+            height: 100%
+            object-fit: cover
+
+// Responsive Design
+@media (min-width: 768px)
+    .project-card
+        grid-template-columns: 1fr 1fr
+        align-items: start
+        
+        &__image
+            padding-bottom: 100%
+    
+    .about-content
+        grid-template-columns: 2fr 1fr
+        
+        &__image
+            grid-column: 2
+            grid-row: 1 / 3
+
+@media (max-width: 768px)
+    html
+        font-size: 14px
+    
+    body
+        padding-top: 50px
+    
+    h1
+        font-size: $font-size-4xl
+    
+    h2
+        font-size: $font-size-3xl
+    
+    h3
+        font-size: $font-size-2xl
+    
+    .hero
+        padding: $spacing-2xl $spacing-md
+        
+        &__title
+            font-size: $font-size-4xl
+    
+    .main-content
+        padding: 0 $spacing-md
+    
+    .works-section, .about-section
+        padding: $spacing-2xl 0
+    
+    .section-header
+        margin-bottom: $spacing-2xl

@@ -1,0 +1,87 @@
+doctype html
+html(lang="en")
+    head
+        include inc/_head.pug
+    body
+        //- Navigation
+        nav.nav-bar
+            include inc/_nav
+        
+        //- Hero Section
+        header.hero
+            .hero__content
+                h1.hero__title Hi, I'm Justine
+                p.hero__description A visual designer, driven by exploration and experimentation, turning ideas into engaging designs people love.
+                a.hero__contact(href="mailto:justineeabucay@gmail.com") justineeabucay@gmail.com
+        
+        //- Main Content
+        main.main-content
+            //- Selected Works Section
+            section#works.works-section
+                header.section-header
+                    h2.section-title Selected Work
+                    p.section-description A selection of projects that showcase my range as a designer — from experimental poster explorations to in-depth UX research studies.
+                
+                //- Project Grid
+                .project-grid
+                    //- Project 1: SSFB
+                    article.project-card
+                        a.project-card__link(href="ssfb-page.html" aria-label="View Strange Sounds from Beyond project")
+                            .project-card__image
+                                img(src="images/ssfb-thumbnail.jpg" alt="Strange Sounds from Beyond project preview" loading="lazy")
+                                .project-card__overlay
+                                    span.project-card__cta View Project
+                        .project-card__content
+                            p.project-card__label Project01_SSFB
+                            h3.project-card__title 
+                                a(href="ssfb-page.html") Graphic Exploration: Strange Sounds from Beyond
+                            p.project-card__description A reimagined identity of Strange Sounds from Beyond, an Amsterdam-based experimental music festival.
+                    
+                    //- Project 2: SSFB (Duplicate in your design)
+                    article.project-card
+                        a.project-card__link(href="ssfb-page.html" aria-label="View Strange Sounds from Beyond project")
+                            .project-card__image
+                                img(src="images/ssfb-thumbnail-2.jpg" alt="Strange Sounds from Beyond project preview" loading="lazy")
+                                .project-card__overlay
+                                    span.project-card__cta View Project
+                        .project-card__content
+                            p.project-card__label Project01_SSFB
+                            h3.project-card__title 
+                                a(href="ssfb-page.html") Graphic Exploration: Strange Sounds from Beyond
+                            p.project-card__description A reimagined identity of Strange Sounds from Beyond, an Amsterdam-based experimental music festival.
+            
+            //- About Section
+            section#about.about-section
+                header.section-header
+                    h2.section-title About Me
+                
+                .about-content
+                    .about-content__text
+                        p Hello! My name is Justine, and I am a student at Simon Fraser University's School of Interactive Arts and Technology, focusing on Visual Design, Web Design, and UX Design.
+                        
+                        p I've always loved experimenting and creating. As a child, I made things out of scraps of paper, guided purely by imagination. That same curiosity led me to open Photoshop for the first time in high school — and since then, I've been hooked. I found myself in deep fascination with graphic design and the art of visual storytelling.
+                        
+                        p As I continue my studies, I'm eager to take my learning beyond the classroom — to gain hands-on experience in the real world. I'm deeply passionate about exploring, experimenting, and refining my craft as I grow as a designer.
+                        
+                        .about-content__cta
+                            p.cta-text LET'S WORK TOGETHER
+                            a.cta-link(href="mailto:justineeabucay@gmail.com") justineeabucay@gmail.com
+                    
+                    .about-content__skills
+                        h3.skills-title SKILLS
+                        
+                        .skills-group
+                            h4.skills-subtitle Design
+                            ul.skills-list
+                                li Adobe Suite (Photoshop, Illustrator & InDesign)
+                                li Figma
+                                li Davinci Resolve
+                        
+                        .skills-group
+                            h4.skills-subtitle Development
+                            ul.skills-list
+                                li Web Development (HTML, CSS & JS)
+                                li Programming (Python, Java & C++)
+                    
+                    .about-content__image
+                        img(src="images/profile-photo.jpg" alt="Justine's profile photo" loading="lazy")
